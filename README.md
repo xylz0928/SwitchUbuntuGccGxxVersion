@@ -5,8 +5,10 @@ To switch the default GCC/G++ version on Ubuntu
 
 ## Cause
 When we compile openwrt on Github Action with OS version:  
+  
 -    ubuntu-latest    (22.04)  
--    ubuntu-24.04  
+-    ubuntu-24.04
+  
 We may face the issue if you select some packages related to node/clang:  
   
 `ERROR: package/feeds/packages/gn [host] failed to build.`  
@@ -27,7 +29,8 @@ To solve this issue, you can take this repository,
 
   Refer to Github Action:  
       x86 or 360T7 of:  
-          @xylz0928/Openwrt-Make-x86_7621 if you wanna a real production instant.  
+          @xylz0928/Openwrt-Make-x86_7621  
+  if you wanna a real production instant.  
 
 ## Acknowledgments
   - [GitHub Actions](https://github.com/features/actions)
