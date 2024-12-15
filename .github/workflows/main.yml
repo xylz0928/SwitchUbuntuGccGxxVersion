@@ -1,0 +1,18 @@
+name: Test Switch GCC/G++ Version
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  greet:
+    runs-on: Ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Switch GCC/GXX Version
+        uses: xylz0928/SwitchUbuntuGccGxxVersion@v1.0.0
+        with:
+          TargetVer: '12'
