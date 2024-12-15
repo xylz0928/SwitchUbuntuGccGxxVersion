@@ -1,6 +1,6 @@
 # SwitchUbuntuGccGxxVersion
-To switch the default GCC/G++ version on Ubuntu
-切换Ubuntu的默认GCC/G++版本
+To switch the default GCC/G++ version on Ubuntu  
+切换Ubuntu的默认GCC/G++版本  
 
 [English Version | 英文说明](README.md)
 
