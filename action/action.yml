@@ -1,8 +1,26 @@
 name: 'SwitchUbuntuGccGxxVersion'
 description: 'To Switch the GCC/G++ Version on Ubuntu'
 inputs:
-  name:
+  TargetVer:
     description: 'The Target Version to Apply on Your Github Action'
     required: true
     default: '12'
-runs:
+runs: |
+    echo "------------Check current gcc/g++ Version Before Switch------------"
+    gcc --version
+    g++ --version
+    echo "------------------------------GCC/GXX------------------------------"
+    echo "---------------------Install gcc/g++ Version $TargetVer--------------------"
+    sudo -E apt-get -qq update
+    sudo -E apt-get -qq install gcc-$TargetVer g++-$TargetVer
+    echo "------------------------------GCC/GXX------------------------------"
+    echo "--------------------Switch gcc/g++ Version to $TargetVer-------------------"
+    sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-$TargetVer 50
+    sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-$TargetVer 50
+    sudo update-alternatives --set gcc /usr/bin/gcc-$TargetVer
+    sudo update-alternatives --set g++ /usr/bin/g++-$TargetVer
+    echo "------------------------------GCC/GXX------------------------------"
+    echo "-------------Check current gcc/g++ Version After Switch------------"
+    gcc --version
+    g++ --version
+    echo "------------------------------GCC/GXX------------------------------"
