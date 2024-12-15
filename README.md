@@ -1,7 +1,7 @@
 # SwitchUbuntuGccGxxVersion
 To switch the default GCC/G++ version on Ubuntu
 
-[Chinese Version | 中文说明](https://github.com/xylz0928/SwitchUbuntuGccGxxVersion/blob/master/README_CN.md)
+[Chinese Version | 中文说明](README_CN.md)
 
 ## Cause
 When we compile openwrt on Github Action with OS version:  
