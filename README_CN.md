@@ -5,7 +5,7 @@ To switch the default GCC/G++ version on Ubuntu
 [English Version | 英文说明](README.md)
 
 ## 缘由
-当我们使用Github Action，通过一下系统版本来编译Openwrt时：  
+当我们使用Github Action，通过以下系统版本来编译Openwrt时：  
   
 -    ubuntu-latest    (22.04)  
 -    ubuntu-24.04
