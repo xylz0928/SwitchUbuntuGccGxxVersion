@@ -2,7 +2,7 @@
 To switch the default GCC/G++ version on Ubuntu
 切换Ubuntu的默认GCC/G++版本
 
-[English Version | 英文说明](https://github.com/xylz0928/SwitchUbuntuGccGxxVersion/blob/master/README.md)
+[English Version | 英文说明](README.md)
 
 ## 缘由
 当我们使用Github Action，通过一下系统版本来编译Openwrt时：  
