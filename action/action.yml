@@ -1,0 +1,8 @@
+name: 'SwitchUbuntuGccGxxVersion'
+description: 'To Switch the GCC/G++ Version on Ubuntu'
+inputs:
+  name:
+    description: 'The Target Version to Apply on Your Github Action'
+    required: true
+    default: '12'
+runs:
