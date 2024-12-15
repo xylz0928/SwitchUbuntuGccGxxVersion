@@ -1,9 +1,7 @@
 name: Test Switch GCC/G++ Version
 
 on:
-  push:
-    branches:
-      - main
+  repository_dispatch:
 
 jobs:
   greet:
