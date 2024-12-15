@@ -11,24 +11,32 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Switch Ubuntu Gcc Gxx Version Step
+    - name: Check Current GCC/G++ Version Before Switch
       shell: bash
       run: |
-        echo "------------Check current GCC GXX Version Before Switch------------"
+        echo "------------Check Current GCC/G++ Version Before Switch------------"
         gcc --version
         g++ --version
-        echo "------------------------------GCC_GXX------------------------------"
-        echo "---------------------Install GCC GXX Version ${{ inputs.TargetVer }}--------------------"
+        echo "------------------------------GCC/GXX------------------------------"
+    - name: Install GCC/G++
+      shell: bash
+      run: |
+        echo "---------------------Install GCC/G++ Version ${{ inputs.TargetVer }}--------------------"
         sudo -E apt-get -qq update
         sudo -E apt-get -qq install gcc-${{ inputs.TargetVer }} g++-${{ inputs.TargetVer }}
-        echo "------------------------------GCC_GXX------------------------------"
-        echo "--------------------Switch gcc/g++ Version to ${{ inputs.TargetVer }}-------------------"
+        echo "------------------------------GCC/GXX------------------------------"
+    - name: Switch GCC/G++ Version
+      shell: bash
+      run: |
+        echo "--------------------Switch GCC/G++ Version to ${{ inputs.TargetVer }}-------------------"
         sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-${{ inputs.TargetVer }} 50
         sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-${{ inputs.TargetVer }} 50
         sudo update-alternatives --set gcc /usr/bin/gcc-${{ inputs.TargetVer }}
         sudo update-alternatives --set g++ /usr/bin/g++-${{ inputs.TargetVer }}
-        echo "------------------------------GCC_GXX------------------------------"
-        echo "-------------Check current GCC GXX Version After Switch------------"
+        echo "------------------------------GCC/GXX------------------------------"
+    - name: Check Current GCC/G++ Version After Switch
+      shell: bash
+        echo "-------------Check Current GCC/G++ Version After Switch------------"
         gcc --version
         g++ --version
-        echo "------------------------------GCC_GXX------------------------------"
+        echo "------------------------------GCC/GXX------------------------------"
