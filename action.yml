@@ -11,21 +11,21 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Check Current GCC/G++ Version Before Switch
+    - name: Check Current GCC GXX Version Before Switch
       shell: bash
       run: |
         echo "------------Check Current GCC/G++ Version Before Switch------------"
         gcc --version
         g++ --version
         echo "------------------------------GCC/GXX------------------------------"
-    - name: Install GCC/G++
+    - name: Install GCC GXX
       shell: bash
       run: |
         echo "---------------------Install GCC/G++ Version ${{ inputs.TargetVer }}--------------------"
         sudo -E apt-get -qq update
         sudo -E apt-get -qq install gcc-${{ inputs.TargetVer }} g++-${{ inputs.TargetVer }}
         echo "------------------------------GCC/GXX------------------------------"
-    - name: Switch GCC/G++ Version
+    - name: Switch GCC GXX Version
       shell: bash
       run: |
         echo "--------------------Switch GCC/G++ Version to ${{ inputs.TargetVer }}-------------------"
@@ -34,7 +34,7 @@ runs:
         sudo update-alternatives --set gcc /usr/bin/gcc-${{ inputs.TargetVer }}
         sudo update-alternatives --set g++ /usr/bin/g++-${{ inputs.TargetVer }}
         echo "------------------------------GCC/GXX------------------------------"
-    - name: Check Current GCC/G++ Version After Switch
+    - name: Check Current GCC GXX Version After Switch
       shell: bash
         echo "-------------Check Current GCC/G++ Version After Switch------------"
         gcc --version
