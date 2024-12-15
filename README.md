@@ -1,7 +1,7 @@
 # SwitchUbuntuGccGxxVersion
 To switch the default GCC/G++ version on Ubuntu
 
-[Chinese Version | 中文说明](https://github.com/xylz0928/SwitchUbuntuGccGxxVersion/blob/master/README_CN.md))
+[Chinese Version | 中文说明](https://github.com/xylz0928/SwitchUbuntuGccGxxVersion/blob/master/README_CN.md)
 
 ## Cause
 When we compile openwrt on Github Action with OS version:  
@@ -25,7 +25,7 @@ To solve this issue, you can take this repository,
       TargetVer: '12'
 ```
 
-  If you don't put [with] parameters, the default version will be set to GCC-12 and G++-12 which are tested good to compile openwrt  
+  If you don't put `with` parameters, the default version will be set to `GCC-12` and `G++-12` which are tested good to compile openwrt via `Lean's Openwrt` and `hanwckf/immortalwrt-mt798x`
 
   Refer to Github Action:  
       x86 or 360T7 of:  
