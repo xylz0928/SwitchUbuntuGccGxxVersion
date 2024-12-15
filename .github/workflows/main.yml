@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  greet:
+  SwitchGCCGXX:
     runs-on: Ubuntu-latest
     steps:
       - name: Checkout repository
